@@ -45,9 +45,11 @@ public class policy_information {
                 System.out.println("Policyholder Last Name: " + policy.get(i).getHolderLastName());
                 System.out.println("Policyholder's Age: " + policy.get(i).getHolderAge());
                 System.out.println("Policyholder's Smoking Status (smoker/non-smoker): " + policy.get(i).getHolderSmokingStatus());
-                System.out.println("Policyholder' Height: : " + policy.get(i).getHolderHeight());
-                System.out.println("Policyholder's Weight: " + policy.get(i).getHolderWeight());
+                System.out.println("Policyholder' Height: : " + policy.get(i).getHolderHeight() + " inches");
+                System.out.println("Policyholder's Weight: " + policy.get(i).getHolderWeight() + " pounds");
                 System.out.printf("Policyholder's BMI: %.2f\n\n", policy.get(i).getBMI());
+
+                
             }
         }catch(IOException ex){
             System.out.println("Something went wrong reading the policy file: " + ex.getMessage());
