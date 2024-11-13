@@ -8,7 +8,7 @@ public class policy_information {
 
             Scanner inputFile = new Scanner(file);
 
-            int policyNum = 0, holderAge = 0;
+            int policyNum = 0, holderAge = 0, smoker = 0, nonSmoker = 0;
             double holderHeight = 0, holderWeight = 0;
             String providerName = "", holderFirstName = "", holderLastName = "", holderSmokingStatus = "";
             
@@ -49,7 +49,14 @@ public class policy_information {
                 System.out.println("Policyholder's Weight: " + policy.get(i).getHolderWeight() + " pounds");
                 System.out.printf("Policyholder's BMI: %.2f\n\n", policy.get(i).getBMI());
 
-                
+                if(policy.get(i).getHolderSmokingStatus().equalsIgnoreCase("smoker")){
+                    smoker += 1;
+                }else{
+                    nonSmoker += 1;
+                }
+
+                System.out.println("The number of policies with a smoker is: " + smoker);
+                System.out.println("The number of policies with a non-smoker is: " + nonSmoker);
             }
         }catch(IOException ex){
             System.out.println("Something went wrong reading the policy file: " + ex.getMessage());
